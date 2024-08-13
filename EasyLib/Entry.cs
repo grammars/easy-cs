@@ -6,7 +6,7 @@ namespace EasyLib
     {
         public string Description() 
         {
-            return "EasyLib版本 0.0.1";
+            return "EasyLib版本 0.0.2";
         }
     }
 }
