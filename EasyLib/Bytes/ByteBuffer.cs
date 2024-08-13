@@ -7,13 +7,20 @@ using System.Threading.Tasks;
 namespace EasyLib
 {
     /// <summary>
-    /// 字节缓冲处理类，仅支持大端模式
+    /// 字节缓冲处理类
     /// 本类非线程安全
     /// </summary>
     [Serializable]
     public class ByteBuffer
     {
-        //字节缓存区，需保证数组中都是大端模式数据，否则容易出错
+        private bool LittleEndian = false;
+        public ByteBuffer UseLittleEndian(bool isLE)
+        {
+            LittleEndian = isLE;
+            return this;
+        }
+
+        //字节缓存区
         private byte[] _buf;
         //读取索引
         private int readIndex = 0;
@@ -129,7 +136,7 @@ namespace EasyLib
         /// <returns>高字节序列的字节数组</returns>
         private byte[] Flip(byte[] bytes)
         {
-            if (BitConverter.IsLittleEndian)
+            if(LittleEndian != BitConverter.IsLittleEndian)
             {
                 Array.Reverse(bytes);
             }
