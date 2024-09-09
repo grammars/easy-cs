@@ -2,8 +2,8 @@
 {
     public struct Size
     {
-        float Width;
-        float Height;
+        public float Width;
+        public float Height;
 
         public Size(float w, float h)
         {
