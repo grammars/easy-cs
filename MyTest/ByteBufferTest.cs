@@ -2,7 +2,7 @@ using EasyLib;
 
 namespace MyTest
 {
-    public class Tests
+    public class ByteBufferTests
     {
         [SetUp]
         public void Setup()
