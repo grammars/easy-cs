@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EasyLib
 {
@@ -32,6 +29,12 @@ namespace EasyLib
         private int markWirteIndex = 0;
         //缓存区字节数组的长度
         private int capacity;
+
+        /// <summary>
+        /// 直接获取原始的 byte[] _buf
+        /// </summary>
+        /// <returns>原始buf</returns>
+        public byte[] GetBuf() { return _buf; }
 
 
         //对象池
