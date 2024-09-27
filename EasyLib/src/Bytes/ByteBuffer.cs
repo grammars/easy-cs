@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace EasyLib
 {
@@ -468,6 +469,16 @@ namespace EasyLib
             {
                 disBytes[i] = this.ReadByte();
             }
+        }
+
+        public byte[] ReadBytes(int len) 
+        {
+            byte[] bs = new byte[len];
+            for (int i = 0; i < len; i++)
+            {
+                bs[i] = ReadByte();
+            }
+            return bs;
         }
 
         /// <summary>
