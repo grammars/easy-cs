@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 
 namespace EasyLib
 {
@@ -325,7 +324,7 @@ namespace EasyLib
         /// 写入一个布尔型数据
         /// </summary>
         /// <param name="value"></param>
-        public void WriteBoolean(bool value)
+        public void WriteBool(bool value)
         {
             WriteBytes(Flip(BitConverter.GetBytes(value)));
         }
@@ -451,7 +450,7 @@ namespace EasyLib
         /// 读取布尔型数据
         /// </summary>
         /// <returns></returns>
-        public bool ReadBoolean()
+        public bool ReadBool()
         {
             return BitConverter.ToBoolean(Read(1), 0);
         }
